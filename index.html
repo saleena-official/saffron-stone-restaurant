@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Discover delicious food, a warm atmosphere and memorable dining at Saffron & Stone.">
+  <title>Saffron & Stone | A Taste to Remember</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #26372d;
+      background: #fffdf7;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1120px;
+      margin: auto;
+    }
+
+    header {
+      background: #173c2c;
+      padding: 20px 0;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 25px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #e5bd77;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #e5bd77;
+    }
+
+    .hero {
+      min-height: 510px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: white;
+      background:
+        linear-gradient(#10271dcc, #10271dcc),
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    }
+
+    .hero-content {
+      width: 100%;
+      padding: 85px 0;
+    }
+
+    .eyebrow {
+      color: #e5bd77;
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(40px, 7vw, 70px);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 590px;
+      margin: 0 auto 30px;
+      color: #f3f0e7;
+      font-size: 17px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #e5bd77;
+      color: #173c2c;
+      text-decoration: none;
+      padding: 13px 25px;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      background: #f3d59d;
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 75px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title p {
+      color: #a17a3f;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .section-title h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(30px, 5vw, 42px);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .menu-card {
+      background: white;
+      border: 1px solid #eee8dc;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: 0.25s;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px #173c2c12;
+    }
+
+    .menu-card img {
+      display: block;
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+
+    .menu-info {
+      padding: 22px;
+    }
+
+    .menu-info h3 {
+      font-family: Georgia, serif;
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .menu-info p {
+      color: #73766c;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .price {
+      color: #8a632c;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .about {
+      background: #f2f0e6;
+    }
+
+    .about-content {
+      max-width: 760px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about-content h2 {
+      font-family: Georgia, serif;
+      font-size: 36px;
+      margin-bottom: 18px;
+    }
+
+    .about-content p {
+      color: #60675e;
+      margin-bottom: 15px;
+    }
+
+    .hours {
+      text-align: center;
+    }
+
+    .hours-box {
+      max-width: 520px;
+      margin: auto;
+      padding: 30px;
+      border: 1px solid #e6dfd0;
+      border-radius: 8px;
+      background: white;
+    }
+
+    .hours-box p {
+      padding: 9px 0;
+      border-bottom: 1px solid #f0ece4;
+    }
+
+    .hours-box p:last-child {
+      border-bottom: none;
+    }
+
+    .contact {
+      background: #173c2c;
+      color: white;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-family: Georgia, serif;
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .contact p {
+      color: #e0e8df;
+      margin-bottom: 25px;
+    }
+
+    footer {
+      padding: 22px 0;
+      text-align: center;
+      background: #10291e;
+      color: #e0e8df;
+      font-size: 13px;
+    }
+
+    @media (max-width: 760px) {
+      nav {
+        justify-content: center;
+      }
+
+      nav ul {
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .hero {
+        min-height: 440px;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-card img {
+        height: 230px;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Saffron <span>&</span> Stone</div>
+
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Our Menu</a></li>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#hours">Opening Hours</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <p class="eyebrow">Good food. Good company.</p>
+
+        <h1>A Taste<br>to Remember.</h1>
+
+        <p>
+          Discover thoughtfully prepared dishes, welcoming
+          surroundings and little moments worth sharing.
+        </p>
+
+        <a href="#menu" class="button">Explore Our Menu</a>
+      </div>
+    </section>
+
+    <section id="menu">
+      <div class="container">
+        <div class="section-title">
+          <p>Made with care</p>
+          <h2>Our Popular Dishes</h2>
+        </div>
+
+        <div class="menu-grid">
+          <article class="menu-card">
+            <img
+              src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=800&q=80"
+              alt="Fresh pasta served with herbs"
+              loading="lazy"
+            >
+
+            <div class="menu-info">
+              <h3>Garden Herb Pasta</h3>
+              <p>Fresh pasta with herbs, olive oil and seasonal flavours.</p>
+              <span class="price">₹249</span>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <img
+              src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
+              alt="Gourmet burger with fresh ingredients"
+              loading="lazy"
+            >
+
+            <div class="menu-info">
+              <h3>Signature Burger</h3>
+              <p>A delicious burger layered with fresh ingredients and sauce.</p>
+              <span class="price">₹299</span>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <img
+              src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80"
+              alt="Fresh colourful salad in a bowl"
+              loading="lazy"
+            >
+
+            <div class="menu-info">
+              <h3>Harvest Fresh Bowl</h3>
+              <p>A colourful mix of fresh vegetables and a light dressing.</p>
+              <span class="price">₹199</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about-content">
+        <div class="section-title">
+          <p>Our philosophy</p>
+          <h2>Food Brings Us Together</h2>
+        </div>
+
+        <p>
+          At Saffron & Stone, we believe a memorable meal
+          begins with care, quality ingredients and a warm welcome.
+        </p>
+
+        <p>
+          From casual lunches to special evenings, our goal
+          is to make every visit feel a little more special.
+        </p>
+      </div>
+    </section>
+
+    <section class="hours" id="hours">
+      <div class="container">
+        <div class="section-title">
+          <p>Plan your visit</p>
+          <h2>Opening Hours</h2>
+        </div>
+
+        <div class="hours-box">
+          <p><strong>Monday – Friday:</strong> 11:00 AM – 10:00 PM</p>
+          <p><strong>Saturday:</strong> 12:00 PM – 11:00 PM</p>
+          <p><strong>Sunday:</strong> 12:00 PM – 9:00 PM</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2>We'd Love to See You</h2>
+
+        <p>
+          Questions about our menu or planning a visit?
+          Get in touch with us.
+        </p>
+
+        <!-- Replace this placeholder with your contact email -->
+        <a href="mailto:hello@example.com" class="button">
+          Contact the Restaurant →
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Saffron & Stone. Restaurant website demo.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
